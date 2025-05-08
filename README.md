@@ -96,8 +96,8 @@ The project depends on the following Python libraries:
 - `torchvision`  
 
 ## References
-[1] Gretton, A., K. Fukumizu, Z. Harchaoui, and B. K. Sriperumbudur (2009). A fast, consistent kernel two-sample test. Advances in neural information processing systems 22.
-[2] Gretton, A., K. M. Borgwardt, M. J. Rasch, B. Schölkopf, and A. Smola (2012). A kernel two-sample test. The Journal of Machine Learning Research 13(1), 723–773.
-[3] Shekhar, S., I. Kim, and A. Ramdas (2022). A permutation-free kernel two-sample test. Advances in Neural Information Processing Systems 35, 18168–18180.
-[4] Gao, H. and X. Shao (2023). Two sample testing in high dimension via maximum mean discrepancy. Journal of Machine Learning Research 24(304), 1–33.
+[1] Gretton, A., K. Fukumizu, Z. Harchaoui, and B. K. Sriperumbudur (2009). A fast, consistent kernel two-sample test. Advances in neural information processing systems 22.  
+[2] Gretton, A., K. M. Borgwardt, M. J. Rasch, B. Schölkopf, and A. Smola (2012). A kernel two-sample test. The Journal of Machine Learning Research 13(1), 723–773.  
+[3] Shekhar, S., I. Kim, and A. Ramdas (2022). A permutation-free kernel two-sample test. Advances in Neural Information Processing Systems 35, 18168–18180.  
+[4] Gao, H. and X. Shao (2023). Two sample testing in high dimension via maximum mean discrepancy. Journal of Machine Learning Research 24(304), 1–33.  
 [5] Chen, H. and J. H. Friedman (2017). A new graph-based two-sample test for multivariate and object data. Journal of the American statistical association 112(517), 397–409.
