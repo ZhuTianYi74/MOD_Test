@@ -1,7 +1,6 @@
-# MOD: Maximum-of-difference Test
+# MOD: kernel-based maximum-of-difference Test
 
-This project implements our proposed **Maximum-of-difference (MOD)** testing method for two-sample testing problems, along with several comparison methods. We focus on kernel-based testing techniques for determining whether two samples come from the same distribution.
-
+This project implements our proposed **kernel-based maximum-of-difference (MOD)** testing method for two-sample testing problems, along with several comparison methods. Specifically, we maximize the squared differences between the average distance of the within sample and the between samples across all observations. Accordingly, the proposed test is a max-of-difference type test and can effectively capture subtle differences between two samples.
 ---
 
 ## Project Structure
@@ -9,15 +8,19 @@ This project implements our proposed **Maximum-of-difference (MOD)** testing met
 ###  Core Implementation
 
 - `MOD.py`: Our implementation of the kernel-based maximum-of-difference test with two threshold computation approaches:
-  - **MOD-bootstrap**: Using bootstrap for threshold calculation  
+  - **MOD-bootstrap**: Using Bootstrap for threshold calculation  
   - **MOD-permutation**: Using permutation for threshold calculation
 
-### Comparison Methods
+## Comparison Methods
 
-- `MMD.py`: Maximum Mean Discrepancy implementation  
-- `HMMD.py`: Hierarchical MMD test implementation  
-- `GF.py`: Graph-based testing method  
-- `GMMD.py`: Generalized MMD implementation  
+We compare our MOD methods with several existing approaches:
+
+- `MMD.py`: `MMD-permutation`, `MMD-spectral`(Gretton et al., 2009), `linear MMD test (lMMD)`(Gretton et al., 2012), `cross MMD test (c-MMD)`(Shekhar et al., 2022)  
+- `HMMD.py`: high-dimensional MMD test (Gao and Shao, 2023)  
+- `GF.py`: Graph-based testing (Chen and Friedman, 2017) 
+
+
+---
 
 ### Utility Modules
 
@@ -39,32 +42,12 @@ This project implements our proposed **Maximum-of-difference (MOD)** testing met
 
 ### Data Directories (Due to file size limitations, cifar_data and galaxy_data must be downloaded by yourself)
 
-- `cifar_data`: Contains CIFAR-10 and CIFAR-10.1 datasets  
-- `galaxy_data`: Contains GalaxyMNIST dataset
+- `cifar_data`: Contains CIFAR-10 and CIFAR-10.1 datasets (https://tensorflow.google.cn/datasets/catalog/cifar10)
+- `galaxy_data`: Contains GalaxyMNIST dataset (https://github.com/mwalmsley/galaxy_mnist)
 - `mnist_7x7.data`: Contains MNIST dataset
 
 ---
 
-##  Our Methods: MOD (Maximum Outer Difference)
-
-Our proposed method includes two variants:
-
-- `MODboot`: Using bootstrap to compute the threshold  
-- `MODperm`: Using permutation to compute the threshold  
-
-
----
-
-## Comparison Methods
-
-We compare our MOD methods with several existing approaches:
-
-- Various MMD variants: `MMD-permutation`, `MMD-spectral`, `l-MMD`, `c-MMD`  
-- `HMMD`: Hierarchical MMD  
-- `GF`: Graph-based testing  
-- `GMMD`: Generalized MMD  
-
----
 ##  Usage
 
 ### MNIST Data Test
