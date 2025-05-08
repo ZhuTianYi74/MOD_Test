@@ -49,7 +49,28 @@ We compare our MOD methods with several existing approaches:
 ---
 
 ##  Usage
+##  Simulation
+### Test power vs. number of observations.
+```bash
+python simu.py
+```
 
+### Test power vs. strength of signals.
+```bash
+python simu2.py
+```
+
+### Test power vs. skewness of observations
+```bash
+python simu3.py
+```
+
+### Test power vs. type of kernel
+```bash
+python simu4.py
+```
+
+## Real data
 ### MNIST Data Test
 ```bash
 python MNIST_test.py
