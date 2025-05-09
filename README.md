@@ -50,24 +50,24 @@ We compare our MOD methods with several existing approaches:
 
 ##  Usage
 ##  Simulation
-### Test power vs. number of observations and dimension.
+### Test power vs number of observations
+```bash
+python simu3.py
+```
+
+### Test power vs dimension of observations
 ```bash
 python simu.py
 ```
 
-### Test power vs. strength of signals.
+### Test power vs strength of signals
 ```bash
 python simu2.py
 ```
 
-### Test power vs. skewness of observations
+### Test power vs skewness of observations
 ```bash
 python simu4.py
-```
-
-### Test power vs. type of kernel
-```bash
-python simu3.py
 ```
 
 ## Real data
@@ -92,14 +92,6 @@ python galaxy_test.py
 
 - **Sample sizes (n):** [20, 50, 100, 200, 500, 1000]  
 - **Kernel types:** `["RBF", "Laplace", "Laplace2"]`  
-
----
-
-## Output Results
-
-- Testing power of our MOD methods and comparison methods with different sample sizes and kernel functions  
-- CSV files with comparison results  
-- Visualized power curves  
 
 ---
 
