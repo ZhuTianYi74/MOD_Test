@@ -12,7 +12,7 @@ from MOD import *
 from MMD import *
 from HMMD import *
 from GF import *
-from GMMD import *
+
 
 def fun(sets,n,p,ratio,param,null_type,kernel_type):
     np.random.seed(sets)
@@ -59,12 +59,7 @@ def fun(sets,n,p,ratio,param,null_type,kernel_type):
     linear_mmd2_stat, linear_mmd2_sig = linear_mmd2(X, Y, kernel_func)
     linear_mmd2_th = linear_mmd2_sig*thresh_normal(0.05)
     linear_mmd2_res=1.0*(linear_mmd2_stat>linear_mmd2_th)
-    # #b-mmd
-    # block_mmd2 = partial(BlockMMDSquared, b=max(2, int(sqrt(len(X)))),
-    #                                         return_sig=True, biased=False)
-    # b_mmd_stat, b_mmd_sig = block_mmd2(X, Y, kernel_func)
-    # b_mmd_th = b_mmd_sig*thresh_normal(0.05)
-    # b_mmd_res=1.0*(b_mmd_stat>b_mmd_th)
+    
     #c-mmd
     cross_mmd2 = crossMMD2sampleUnpaired
     c_mmd_stat = cross_mmd2(X, Y, kernel_func)
@@ -79,10 +74,6 @@ def fun(sets,n,p,ratio,param,null_type,kernel_type):
     #GF
     res_GF=gtests(X,Y,perm=0)
     GF_res=1.0*(res_GF["pval"]["S_A_appr"]<0.05)
-    
-    # #generalized MMD
-    # res_gmmD=kertests(X, Y, kernel_func)
-    # GMMD_res=1.0*(res_gmmD['pval']['fGPK_appr']<0.05)
 
    
     res=[MODboot_res,MODperm_res,
@@ -93,10 +84,10 @@ def fun(sets,n,p,ratio,param,null_type,kernel_type):
     return res
 
 # if __name__ == "__main__":
-#     output_dir = "Z:/User/Documents/pudan/kernel/20241010/case1"
+#     output_dir = "."
 #     ns=[200]
 #     ps= [5, 25,50,100, 200, 400]
-#     thetas=[0.15,0.15,0.10,3,0]
+#     thetas=[0.15,0.15,0.10,3]
 #     types=["mean","cov","loc","dstr"]
 #     kernel_types=["RBF","Laplace","Laplace2"]
     

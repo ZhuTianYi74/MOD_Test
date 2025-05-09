@@ -13,7 +13,7 @@ from MOD import *
 from MMD import *
 from HMMD import *
 from GF import *
-from GMMD import *
+
 
 def load_images_list(highres):
     if highres:
@@ -165,6 +165,6 @@ if __name__ == "__main__":
         fig.legend(handles, labels, loc='upper center', ncol=4)
         plt.tight_layout()
         plt.subplots_adjust(top=0.9)
-        # 添加标题
+
         plt.title(f'Kernel Type: {kernel}',fontsize=16)
         plt.savefig(f'{output_dir}/{kernel}_plot.png')

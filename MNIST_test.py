@@ -15,12 +15,12 @@ from MOD import *
 from MMD import *
 from HMMD import *
 from GF import *
-from GMMD import *
-# 加载 MNIST 数据集
+
+# load MNIST dataset
 with open('mnist_7x7.data', 'rb') as handle:
     MINIST = pickle.load(handle)
 
-# 生成数据集 P 和多个子集 Q_list
+# Generate data set P and multiple subsets Q_list
 P = np.vstack(
     (MINIST['0'], MINIST['1'], MINIST['2'], MINIST['3'], MINIST['4'], MINIST['5'], MINIST['6'], MINIST['7'], MINIST['8'],MINIST['9']))
 Q1 = np.vstack((MINIST['1'], MINIST['3'], MINIST['5'], MINIST['7'], MINIST['9']))
@@ -29,7 +29,7 @@ Q3 = np.vstack((MINIST['0'], MINIST['1'], MINIST['2'], MINIST['3'], MINIST['5'],
 Q4 = np.vstack((MINIST['0'], MINIST['1'], MINIST['2'], MINIST['3'], MINIST['4'], MINIST['5'], MINIST['7'], MINIST['9']))
 Q5 = np.vstack((MINIST['0'], MINIST['1'], MINIST['2'], MINIST['3'], MINIST['4'], MINIST['5'], MINIST['6'], MINIST['7'], MINIST['9']))
 Q_list = [Q1, Q2, Q3, Q4, Q5]
-#定义核函数
+# Define the kernel function
 def fun(P,Q,sets,n,kernel_type):
     np.random.seed(sets)
     
@@ -99,10 +99,6 @@ def fun(P,Q,sets,n,kernel_type):
     #GF
     res_GF=gtests(X,Y,perm=0)
     GF_res=1.0*(res_GF["pval"]["S_A_appr"]<0.05)
-    
-    # #generalized MMD
-    # res_gmmD=kertests(X, Y, kernel_func)
-    # GMMD_res=1.0*(res_gmmD['pval']['fGPK_appr']<0.05)
 
    
     res=[MODboot_res,MODperm_res,
@@ -142,7 +138,7 @@ if __name__ == "__main__":
         fig, ax = plt.subplots(figsize=(12, 10))
         handles = []
         labels = []
-        p_original = kernel_data['n'].unique()  # 获取唯一的n值
+        p_original = kernel_data['n'].unique() 
         p_mapped = np.linspace(0, len(p_original) - 1, len(p_original)) 
         
         for j, method in enumerate(merge.columns[2:]):
