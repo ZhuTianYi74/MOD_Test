@@ -1,4 +1,4 @@
-# MOD: kernel-based maximum-of-difference Test
+# MOD: kernel-based maximum-of-difference
 
 This project implements our proposed **kernel-based maximum-of-difference (MOD)** testing method for two-sample testing problems, along with several comparison methods. Specifically, we maximize the squared differences between the average distance of the within sample and the between samples across all observations. Accordingly, the proposed test is a max-of-difference type test and can effectively capture subtle differences between two samples.
 ---
@@ -8,14 +8,14 @@ This project implements our proposed **kernel-based maximum-of-difference (MOD)*
 ###  Core Implementation
 
 - `MOD.py`: Our implementation of the kernel-based maximum-of-difference test with two threshold computation approaches:
-  - **MOD-bootstrap**: Using Bootstrap for threshold calculation  
-  - **MOD-permutation**: Using permutation for threshold calculation
+  - **MOD-bootstrap**: Test with bootstrapped  
+  - **MOD-permutation**: Test with permutated critical value
 
 ## Comparison Methods
 
 We compare our MOD methods with several existing approaches:
 
-- `MMD.py`: `MMD-permutation`, `MMD-spectral`(Gretton et al., 2009), `linear MMD test (lMMD)`(Gretton et al., 2012), `cross MMD test (c-MMD)`(Shekhar et al., 2022)  
+- `MMD.py`: Various MMD variants:`MMD-permutation`, `MMD-spectral`(Gretton et al., 2009), `linear MMD test (lMMD)`(Gretton et al., 2012), `cross MMD test (c-MMD)`(Shekhar et al., 2022)  
 - `HMMD.py`: high-dimensional MMD test (Gao and Shao, 2023)  
 - `GF.py`: Graph-based testing (Chen and Friedman, 2017) 
 
@@ -50,7 +50,7 @@ We compare our MOD methods with several existing approaches:
 
 ##  Usage
 ##  Simulation
-### Test power vs. number of observations.
+### Test power vs. number of observations and dimension.
 ```bash
 python simu.py
 ```
@@ -62,12 +62,12 @@ python simu2.py
 
 ### Test power vs. skewness of observations
 ```bash
-python simu3.py
+python simu4.py
 ```
 
 ### Test power vs. type of kernel
 ```bash
-python simu4.py
+python simu3.py
 ```
 
 ## Real data
